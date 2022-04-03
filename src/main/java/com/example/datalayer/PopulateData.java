@@ -18,26 +18,26 @@ public class PopulateData {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void addDataToDB(){
-
-        for (int i =1;i<=10;i++){
-            Department department = new Department();
-            department.setCode(Integer.parseInt(String.format("%03d", i)));
-            department.setDescription("Description of Department " + String.format("%03d", i));
-            department.setName("Department-"+i);
-            this.departmentRepository.save(department);
-            for (int j = i*10;j<(i*10)+10;j++){
-                Employee employee = new Employee();
-                employee.setEmail("email-"+j+"@gmail.com");
-                employee.setPhone(Integer.parseInt(String.format("%09d", j)));
-                employee.setFirstName("Name-"+j);
-                employee.setFirstName("Name-"+j);
-                employee.setMiddleName("Middel-"+j);
-                employee.setDepartment(department);
-                this.employeeRepository.save(employee);
-            }
-        }
-
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void addDataToDB(){
+//
+//        for (int i =1;i<=10;i++){
+//            Department department = new Department();
+//            department.setCode(Integer.parseInt(String.format("%03d", i)));
+//            department.setDescription("Description of Department " + String.format("%03d", i));
+//            department.setName("Department-"+i);
+//            this.departmentRepository.save(department);
+//            for (int j = i*10;j<(i*10)+10;j++){
+//                Employee employee = new Employee();
+//                employee.setEmail("email-"+j+"@gmail.com");
+//                employee.setPhone(Integer.parseInt(String.format("%09d", j)));
+//                employee.setFirstName("Name-"+j);
+//                employee.setFirstName("Name-"+j);
+//                employee.setMiddleName("Middel-"+j);
+//                employee.setDepartment(department);
+//                this.employeeRepository.save(employee);
+//            }
+//        }
+//
+//    }
 }
