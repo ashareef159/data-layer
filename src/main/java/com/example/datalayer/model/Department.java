@@ -19,7 +19,7 @@ public class Department {
 
     private String description;
 
-    @OneToMany()
+    @OneToMany(mappedBy = "department")
     private List<Employee> employees;
 
 

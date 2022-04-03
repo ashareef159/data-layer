@@ -15,6 +15,6 @@ import java.util.List;
 public interface EmployeeRepository extends JpaRepository<Employee,Long> {
 
     //@EntityGraph(attributePaths = {"department"})
-    @Query("from Employee e join Department d on d = e.department")
+    //@Query("from Employee e join Department d on d = e.department")
     public List<Employee> findByFirstName(String name);
 }
