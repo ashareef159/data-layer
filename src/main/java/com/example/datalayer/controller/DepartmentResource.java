@@ -4,6 +4,7 @@ package com.example.datalayer.controller;
 import com.example.datalayer.model.Department;
 import com.example.datalayer.model.Employee;
 import com.example.datalayer.service.DepartmentService;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ public class DepartmentResource {
 
 
     @GetMapping("/{id}")
+    @JsonView(Department.DepartmentView.class)
     public ResponseEntity<Department> findById(@PathVariable long id){
         return ResponseEntity.ok(this.departmentService.findById(id));
     }
