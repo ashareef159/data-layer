@@ -3,6 +3,7 @@ package com.example.datalayer.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,6 +18,9 @@ public class Department {
     private long code;
 
     private String description;
+
+//    @OneToMany()
+//    private List<Employee> employees;
 
 
 

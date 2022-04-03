@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/employee")
 public class EmployeeResource {
@@ -24,7 +26,15 @@ public class EmployeeResource {
         return ResponseEntity.ok(this.employeeService.findById(id));
     }
 
+    @GetMapping
+    public ResponseEntity<List<Employee>> findAll(){
+        return  ResponseEntity.ok(this.employeeService.findAll());
+    }
 
+    @GetMapping("/name/{name}")
+    public ResponseEntity<List<Employee>> findByName(@PathVariable String name){
+        return ResponseEntity.ok(this.employeeService.findByName(name));
+    }
 
 
 }

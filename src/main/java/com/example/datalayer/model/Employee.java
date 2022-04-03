@@ -1,6 +1,7 @@
 package com.example.datalayer.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Employee {
     private long phone;
 
     @ManyToOne
+    @JoinColumn(name = "department_id")
     private Department department;
 
 
