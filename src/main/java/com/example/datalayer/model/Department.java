@@ -19,8 +19,8 @@ public class Department {
 
     private String description;
 
-//    @OneToMany()
-//    private List<Employee> employees;
+    @OneToMany()
+    private List<Employee> employees;
 
 
 
