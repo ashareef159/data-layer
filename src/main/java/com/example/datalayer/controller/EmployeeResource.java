@@ -28,19 +28,16 @@ public class EmployeeResource {
 
 
     @GetMapping("/{id}")
-    @JsonView(Employee.EmployeetView.class)
     public ResponseEntity<Employee> findById(@PathVariable long id){
         return ResponseEntity.ok(this.employeeService.findById(id));
     }
 
     @GetMapping
-    @JsonView(Employee.EmployeetView.class)
     public ResponseEntity<List<Employee>> findAll(){
         return  ResponseEntity.ok(this.employeeService.findAll());
     }
 
     @GetMapping("/name/{name}")
-    @JsonView(Employee.EmployeetView.class)
     public ResponseEntity<List<Employee>> findByName(@PathVariable String name){
         return ResponseEntity.ok(this.employeeService.findByName(name));
     }

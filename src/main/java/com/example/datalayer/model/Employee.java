@@ -13,23 +13,17 @@ import javax.persistence.*;
 @Data
 public class Employee {
 
-    public static interface EmployeetView{}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonView({Employee.EmployeetView.class,Department.DepartmentView.class})
     private long id;
 
-    @JsonView({Employee.EmployeetView.class,Department.DepartmentView.class})
     private String firstName;
 
-    @JsonView({Employee.EmployeetView.class,Department.DepartmentView.class})
     private String middleName;
 
-    @JsonView({Employee.EmployeetView.class,Department.DepartmentView.class})
     private String email;
 
-    @JsonView({Employee.EmployeetView.class,Department.DepartmentView.class})
     private long phone;
 
     @ManyToOne()

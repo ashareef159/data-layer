@@ -21,7 +21,6 @@ public class DepartmentResource {
 
 
     @GetMapping("/{id}")
-    @JsonView(Department.DepartmentView.class)
     public ResponseEntity<Department> findById(@PathVariable long id){
         return ResponseEntity.ok(this.departmentService.findById(id));
     }
